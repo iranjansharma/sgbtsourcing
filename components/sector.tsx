@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Users } from "lucide-react";
+import { Shield, Users, PlaneTakeoff } from "lucide-react";
 import Image from "next/image";
 import { ASSETS } from "@/constants";
 
@@ -23,7 +23,7 @@ export default function Sector() {
                   <span className="mx-auto block w-fit text-5xl font-semibold">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="lucide lucide-plane-icon lucide-plane  absolute inset-0 size-full text-[#8b51fe]"
+                      className="lucide lucide-plane-icon lucide-plane  absolute inset-0 size-full text-[#febd59]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -36,78 +36,27 @@ export default function Sector() {
                   </span>
                 </div>
                 <h2 className="mt-6 text-center text-3xl font-semibold">
-                  Airlines
+                  Charter Flight Services
                 </h2>
               </CardContent>
             </Card>
             <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2">
               <CardContent className="pt-6">
                 <div className="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="m-auto h-fit w-24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    {/* Base shield shape */}
-                    <path
-                      className="text-zinc-400 dark:text-zinc-600"
-                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                      fill="currentColor"
-                    />
-
-                    {/* Gradient overlay */}
-                    <g
-                      className="text-primary-600 dark:text-primary-500"
-                      clipPath="url(#shield-ban-clip)"
-                    >
-                      <path
-                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                        fill="url(#shield-ban-gradient)"
-                      />
-                    </g>
-
-                    {/* Ban slash */}
-                    <path
-                      d="m4.243 5.21 14.39 12.472"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      className="text-primary-600 dark:text-primary-500"
-                    />
-
-                    {/* Definitions */}
-                    <defs>
-                      <linearGradient
-                        id="shield-ban-gradient"
-                        x1="0"
-                        y1="0"
-                        x2="24"
-                        y2="24"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="white" stopOpacity="0" />
-                        <stop
-                          offset="1"
-                          stopColor="currentColor"
-                          stopOpacity="0.6"
-                        />
-                      </linearGradient>
-
-                      <clipPath id="shield-ban-clip">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <PlaneTakeoff
+                    className="m-auto h-fit w-20 text-[#febd59] dark:text-primary-500"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </div>
                 <div className="relative z-1 mt-6 space-y-2 text-center">
                   <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">
-                    Defense & Space
+                    Aircraft Charter
                   </h2>
                   <p className="text-foreground">
-                    Trusted sourcing partner delivering certified spares and
-                    equipment to defense organizations, ensuring readiness and
-                    reliability.
+                    Aircraft Charter Services provide on-demand, private air
+                    travel tailored to your schedule—not airline timetables.
                   </p>
                 </div>
               </CardContent>
@@ -127,19 +76,31 @@ export default function Sector() {
                     strokeLinejoin="round"
                     className="dark:text-muted-foreground w-full text-[#febd59]"
                   >
-                    <path d="M12 10.189V14" />
+                    {/* Main rotor */}
+                    <path d="M1 5h22" />
                     <path d="M12 2v3" />
-                    <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6" />
-                    <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76" />
-                    <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+
+                    {/* Cockpit + body */}
+                    <path d="M4 13c0-3 2.5-5 5.5-5h4.5c3 0 5 2 5 5v2H4v-2z" />
+                    <path d="M6 8.5v-1.5" />
+
+                    {/* Tail boom */}
+                    <path d="M19 12h4" />
+
+                    {/* Tail rotor */}
+                    <path d="M23 11v2" />
+
+                    {/* Landing skids */}
+                    <path d="M6 17h10" />
+                    <path d="M5 19h12" />
                   </svg>
                 </div>
                 <div className="relative z-1 mt-14 space-y-2 text-center">
-                  <h2 className="text-lg font-medium transition">Marine</h2>
+                  <h2 className="text-lg font-medium transition">Helicopter</h2>
                   <p className="text-foreground">
-                    Comprehensive marine solutions delivering genuine OEM
-                    spares, reliable logistics, and expert engineering support
-                    for shipping companies and vessel operators.
+                    Helicopter Charter Services offer fast, point-to-point air
+                    travel where roads and schedules fail. Ideal for Char Dham
+                    pilgrimage, emergency medical evacuation .
                   </p>
                 </div>
               </CardContent>
